@@ -38,3 +38,28 @@ slot_display <- function(price){
     cat(string, sep="\n")
 }
 slot_display(play())
+
+plays_till_broke <-function(start_with){
+    cash <- start_with
+    n <- 0
+    while (cash > 0){
+        cash <- cash - 1 + play()
+        n <- n +1 
+    }
+    print(n)
+}
+plays_till_broke(100)
+
+play_till_broke2 <- function(start_with){
+    cash <- start_with
+    n <- 0
+    repeat{
+        cash <- cash - 1 + play()
+        n <- n +1
+        if (cash <= 0){
+            break
+        }
+    }
+    print(n)
+}
+play_till_broke2(100)
